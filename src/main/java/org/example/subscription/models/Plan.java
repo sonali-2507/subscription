@@ -1,10 +1,8 @@
 package org.example.subscription.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,11 +14,10 @@ public class Plan extends BaseModel{
     private String name;
     private String description;
     private double price;
-    private int validity;
+    //I want to rename validity as validityInMonths
 
-//    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-//    @JsonIgnore
-//    private Set<Feature> features = new HashSet<>();
-@ManyToMany(mappedBy = "plans")
+    private int validityInMonths;
+
+    @ManyToMany(mappedBy = "plans")
     private Set<Feature> features = new HashSet<>();
 }

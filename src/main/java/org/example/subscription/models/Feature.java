@@ -14,12 +14,8 @@ public class Feature extends BaseModel{
     private String name;
     private String description;
 
-//    @ManyToMany(mappedBy = "features")
-//    private Set<Plan> plans;
-
-
-@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-@JsonIgnore
-private Set<Plan> plans;
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<Plan> plans;
 
 }
