@@ -14,8 +14,6 @@ public class Plan extends BaseModel{
     private String name;
     private String description;
     private double price;
-    //I want to rename validity as validityInMonths
-
     private int validityInMonths;
 
     @ManyToMany(mappedBy = "plans")

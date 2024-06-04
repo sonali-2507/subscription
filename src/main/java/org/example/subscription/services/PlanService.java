@@ -1,16 +1,11 @@
 package org.example.subscription.services;
-
-import jakarta.transaction.Transactional;
 import org.example.subscription.Exceptions.NotFoundException;
-import org.example.subscription.dtos.FeatureDto;
 import org.example.subscription.models.Feature;
 import org.example.subscription.models.Plan;
 import org.example.subscription.repositories.FeatureRepository;
 import org.example.subscription.repositories.PlanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
-
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -35,43 +30,7 @@ public class PlanService {
             throw new NotFoundException("Plan not found");
         }
     }
-//    give me a code to add the feature into plan and return the plan
-//    public Plan addFeatureToPlan(Long planId, Feature feature) throws NotFoundException {
-//        Optional<Plan> planOptional = planRepository.findById(planId);
-//        if (planOptional.isPresent()) {
-//            Plan plan = planOptional.get();
-//            Set<Feature> features = plan.getFeatures();
-//            if(features.contains(feature)){
-//                throw new RuntimeException("Feature already exists in the plan");
-//
-//            }
-//            else if (featureRepository.existsByName(feature.getName())){
-//                //feature exists in the feature table in some other plan
-//                Feature existingFeature = featureRepository.findByName(feature.getName());
-//                Set<Feature> featureSet = plan.getFeatures();
-//                featureSet.add(existingFeature);
-//                plan.setFeatures(featureSet);
-//               return planRepository.save(plan);
-////              planRepository.save(feature.getId(), plan.getId());
-////                return plan;
-//            }
-//            else{
-//                features.add(feature);
-//                plan.setFeatures(features);
-//                Set<Plan> planSet = new HashSet<>();
-//                planSet.add(plan);
-//                feature.setPlans(planSet);
-//                featureRepository.save(feature);
-//                planRepository.save(plan);
-//                return plan;
-//            }
-//
-//        } else {
-//            throw new NotFoundException("Plan not found");
-//        }
-//    }
-
-    //    give me a code to add the feature into plan and return the plan
+    //     code to add the feature into plan and return the plan
     public Plan addFeatureToPlan(Long planId, Feature feature) throws NotFoundException {
         Optional<Plan> planOptional = planRepository.findById(planId);
         if (planOptional.isPresent()) {
@@ -110,15 +69,10 @@ public class PlanService {
             throw new NotFoundException("Plan not found");
         }
     }
-
-
+//To create a new plan
     public Plan createPlan(Plan plan) {
         return planRepository.save(plan);
     }
-
-
-
-
 
     public void deleteFeatureFromPlan(Long planId, Long featureId) throws NotFoundException {
         if(!planRepository.existsById(planId)) {
@@ -130,7 +84,7 @@ public class PlanService {
            planRepository.deleteFeatureFromPlan(planId, featureId);
         }
     }
-
+//To delete a plan
     public void deletePlan(Long id) throws NotFoundException {
         if(!planRepository.existsById(id)) {
             throw new NotFoundException("Plan not found");
@@ -139,7 +93,7 @@ public class PlanService {
         }
 
     }
-
+//To get all plans
     public Iterable<Plan> getAllPlans() {
         return planRepository.findAll();
     }

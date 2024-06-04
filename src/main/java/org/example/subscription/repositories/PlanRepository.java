@@ -10,17 +10,13 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PlanRepository extends JpaRepository<Plan, Long>{
-    //save plan
-    //get me a code to save a plan
 
     Plan save(Plan plan);
-    
-    
+
     @Transactional
     @Modifying
     @Query(value = "DELETE FROM features_plans WHERE plans_id = :planId AND features_id = :featureId", nativeQuery = true)
     void deleteFeatureFromPlan(@Param("planId") Long planId, @Param("featureId") Long featureId);
-
 
     @Transactional
     @Modifying

@@ -8,10 +8,7 @@ import java.util.Set;
 
 @Repository
 public interface FeatureRepository extends JpaRepository<Feature, Long> {
-    Set<Feature> findAllById(Long id);
-
     boolean existsByName(String name);
-
     Feature findByName(String name);
-//    Set<Feature> findAllByPlansId(Long id);
+
 }
