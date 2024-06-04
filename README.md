@@ -184,7 +184,7 @@ The following guides illustrate how to use some features concretely:
 * Added created REST APIs for CREATE plans, features, UPDATE plans, features, DELETE plans, features, ADD features to plan, DELETE features from the plan.
 
 
-### Challenge faced
+### Challenges faced
 * I have faced challenges in creating the relationship between plan and feature, as I have to create a separate table for the relationship and then I have to create the relationship between plan and feature.
 * I have faced challenges in writing queries in database updation.
 
