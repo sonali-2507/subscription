@@ -156,14 +156,14 @@ The following guides illustrate how to use some features concretely:
 }
 ```
 6. DELETE localhost:8080/plans/3/features/11
-* This will delete the feature from the plan 3(u can put any plan id), in place of 11 can put any feature is, n this case 11 is the feature id.
+* This will delete the feature from plan 3(u can put any plan ID), in place of 11 can put any feature is, in this case 11 is the feature id.
 * request body:
 
 7. DELETE localhost:8080/plans/4
-* This will delete the plan 4(u can put any plan id), in this case 4 is the plan id.
+* This will delete plan 4(u can put any plan ID), in this case, 4 is the plan id.
 
 8. POST localhost:8080/features
-* This will create feature
+* This will create a feature
 * request body:
 ```json
 {
@@ -172,18 +172,25 @@ The following guides illustrate how to use some features concretely:
 }
 ```
 9. PUT localhost:8080/features/3
-* This will update the feature 3(u can put any feature id), in this case 3 is the feature id.
+* This will update feature 3(u can put any feature ID), in this case, 3 is the feature ID.
 * request body:
 ```json
 {
-  "name":"demo test feature",
-  "description":"demo test feature"
+  "name": "demo test feature",
+  "description": "demo test feature"
 }
 ```
+### Future scope
+* Added created REST APIs for CREATE plans, features, UPDATE plans, features, DELETE plans, features, ADD features to plan, DELETE features from the plan.
 
 
+### Challenge faced
+* I have faced challenges in creating the relationship between plan and feature, as I have to create a separate table for the relationship and then I have to create the relationship between plan and feature.
+* I have faced challenges in writing queries in database updation.
 
-
+### Achievements
+* Created 9 REST APIs for the given problem statement.
+* Created the relationship between plan and feature.
 
 ### Note
 I Used Java, Spring Boot, Hibernate and MYSQL as I am more efficient with these technologies.
