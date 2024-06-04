@@ -183,16 +183,7 @@ The following guides illustrate how to use some features concretely:
 
 
 
-### Challenge faced
-* I have faced challenge in writing query based on date interval bcause of conflict between java date library and sql date library.
-* I have faced challenge in mapping the fetch data from weather & distance API to java object.
-* I have faced challenge to map the page fetch from database to the response object page.
-* Also reduced response time by using pagination and sorting and also by using indexing on database.
 
-### Achievements
-* Reduced response time from 19s to 5s by following approaches.
-* Created index on date column of table location_info
-* Applied pagination and sorting.
 
 ### Note
 I Used Java, Spring Boot, Hibernate and MYSQL as I am more efficient with these technologies.
